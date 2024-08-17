@@ -1,0 +1,72 @@
+---
+title: "AA"
+description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ex!"
+date: "2022-01-16"
+tags: ['react', 'typescript']
+---
+
+Download git from this link - [https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+Once installed, open the terminal and run following command to check if git is installed or not:
+
+`git --version`
+
+<figure>
+  <img
+    src="/a.png"
+    alt=""
+  />
+  <figcaption>
+    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+    classical Latin literature from 45 BC, making it over 2000 years old.
+  </figcaption>
+</figure>
+
+
+If installation is successfull it will give version of the git.
+
+## Configure Git
+
+Now let Git know who you are. This is important for version control systems, as each Git commit uses this information:
+
+```bash
+git config --global [user.name](http://user.name/) "NAME"
+git config --global user.email "EMAIL"
+```
+
+## Creating Git Directory/Folder
+
+Let's create a new folder with name demo for our project:
+
+```bash
+mkdir demo
+cd demo
+ls
+```
+
+
+As we can see the demo directory is empty.
+
+## Initialize Git
+
+Once we have navigated to the demo folder, now we can initialize Git in this folder:
+
+```bash
+git init 
+```
+
+
+Git creates a hidden folder `.git` to keep track of the changes. 
+
+It is a hidden folder hence we used `ls -a` command to see it
+
+## Initialize Git
+
+Let’s make some changes in this newly intialized repository!!
+
+
+Hence we created a file demo.txt and added text “Hello World” in it.
+
+## Check Git Status
+
+ `git status`  command shows us the current state of our files in a Git project, telling us if we have made any changes, if there are files ready to be saved, and if there are new files that Git hasn’t started tracking yet.
