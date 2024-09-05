@@ -12,7 +12,7 @@ export default function Posts({ posts }: PostProps)  {
     <>
       <Page
         title="Posts"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        description=""
       >
         <PostList posts={posts} />
       </Page>

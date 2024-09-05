@@ -6,34 +6,37 @@ const About: NextPage = () => {
   return (
     <>
       <Page
-        title="About"
-        description="MTS @Oracle | Microsoft Engage'22 Mentee | JPMorgan Quant Research'22 Mentee | MLH Hackathon Winner | Publication in Indian Journal of Applied Research'22 | AWS She Builds'22 | PR Head | B.Tech CSAI'24"
-      >
+        title="Apoorva Verma"
+        description="MySQL and Heatwave Release Engineer @Oracle">
         <Prose>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sed
-            aliquam tempora nihil magni natus mollitia. Doloribus,
-            exercitationem iusto odio asperiores dolor, alias excepturi maxime
-            distinctio quod eum saepe eos!
+            Hey there! I’m excited to share my DevOps journey with you 🚀 <br /><br />
+            I’ve been diving into the world of DevOps, learning the ins and outs of making development and operations work better together. <br />
+
+            <b>Along the way, I’ve picked up some cool tips, tricks, and a few lessons learned the hard way—So why not share them? 😉</b>
+          </p>
+
+          <p>
+            As a professional immersed in DevOps, I’ve had the opportunity to work with cutting-edge technologies like Oracle Cloud Infrastructure (OCI), Jenkins, Docker, and more. <br /><br />
+            My blog is a reflection of the knowledge I’ve gained through hands-on projects, certifications, and real-world challenges.
+          </p>
+
+          <p>
+            I’ve been playing around with tools like Jenkins, Docker, and Oracle Cloud Infrastructure (OCI), and I’m constantly exploring new ways to make things run smoother and faster. <br /><br />
+            This blog is my space to jot down everything I’m learning, from the basics to the more advanced stuff, in the hopes that it might help someone else out there.
+
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sed
-            aliquam tempora nihil magni natus mollitia. Doloribus,
-            exercitationem iusto odio asperiores dolor, alias excepturi maxime
-            distinctio quod eum saepe eos!
+
+            Whether you’re just getting started with DevOps or you’ve been at it for a while, I’m glad you’re here. <br />
+            Let’s learn, experiment, and maybe even mess up a little—because that’s how we grow, right?
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sed
-            aliquam tempora nihil magni natus mollitia. Doloribus,
-            exercitationem iusto odio asperiores dolor, alias excepturi maxime
-            distinctio quod eum saepe eos!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sed
-            aliquam tempora nihil magni natus mollitia. Doloribus,
-            exercitationem iusto odio asperiores dolor, alias excepturi maxime
-            distinctio quod eum saepe eos!
-          </p>
+
+
+
+       
+
+
         </Prose>
       </Page>
     </>

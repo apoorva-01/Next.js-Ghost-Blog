@@ -3,8 +3,7 @@ import { ParsedUrlQuery } from "querystring";
 import { slugify } from "@/lib/utils";
 import { Page } from "@/components/Page";
 import { PostList } from "@/components/PostList";
-import { getPosts } from "@/lib/ghost";
-
+import { getPosts, getPostsByTag } from "@/lib/ghost";
 interface ContextProps extends ParsedUrlQuery {
   tag: string;
 }
@@ -48,15 +47,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // Fetch all posts with the specified tag
 export const getStaticProps: GetStaticProps = async (context) => {
   const { tag } = context.params as ContextProps;
-  const posts = await getPosts();
-  const filteredPosts = posts.filter((post) =>
-    post.tags?.some((t) => t.name && slugify(t.name) === tag)
-  );
+  const posts = await getPostsByTag(tag); // Fetch the post by slug from Ghost
 
   return {
     props: {
       tag,
-      posts: filteredPosts,
+      posts: posts,
     },
   };
 };
