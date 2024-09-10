@@ -11,16 +11,14 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t tech-blog-app .'
+                sh 'docker build -t techblog-app .'
             }
         }
         stage('Deploy to VPS') {
             steps {
                 sshagent(credentials: [env.SSH_KEY_ID]) {
                 sh '''
-                docker save tech-blog-app > your-image.tar
-                scp your-image.tar root@159.65.139.170:/techblog
-                ssh root@159.65.139.170 "docker load < /techblog/your-image.tar && docker run -d --name techblog-app -p 3000:3000 techblog-app-image"
+                docker run -p 3000:3000 techblog-app
                 '''
                  }
             }
