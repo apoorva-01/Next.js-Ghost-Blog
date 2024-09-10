@@ -11,19 +11,12 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t techblog-app .'
+                  sh '''
+                  docker build -t techblog-app .
+                  docker run -p 3000:3000 techblog-app
+                  '''
             }
         }
-        stage('Deploy to VPS') {
-            steps {
-                sshagent(credentials: [env.SSH_KEY_ID]) {
-                sh '''
-                docker run -p 3000:3000 techblog-app
-                '''
-                 }
-            }
-        }
-        
             stage ('Test') {  
               steps{
                     echo "testing the application"
