@@ -1,5 +1,8 @@
 pipeline {  
     agent any  
+     environment {
+        SSH_KEY_ID = 'vps-ssh-key' // The ID you set in the credentials manager
+    }
     stages {  
         stage('Clone Repository') {
             steps {
@@ -13,11 +16,13 @@ pipeline {
         }
         stage('Deploy to VPS') {
             steps {
+                sshagent(credentials: [env.SSH_KEY_ID]) {
                 sh '''
                 docker save tech-blog-app > your-image.tar
                 scp your-image.tar root@159.65.139.170:/techblog
                 ssh root@159.65.139.170 "docker load < /techblog/your-image.tar && docker run -d --name techblog-app -p 3000:3000 techblog-app-image"
                 '''
+                 }
             }
         }
         
