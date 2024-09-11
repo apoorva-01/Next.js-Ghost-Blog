@@ -2,7 +2,7 @@
 
 module.exports = {
   images: {
-    domains: ['159.65.139.170','localhost'], // Allow localhost for image sources
+    domains: ['159.65.139.170','ghost.apoorvaverma.in','localhost'], // Allow localhost for image sources
    
   },
   nextConfig : {
