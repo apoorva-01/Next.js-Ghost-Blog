@@ -9,8 +9,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                   sh '''
-                  docker build -t techblog-app .
-                  docker run -d -p 3000:3000 techblog-app
+                    docker stop techblog-container || true
+                    docker rm techblog-container || true
+                    docker build -t techblog-app .
+                    docker run -d --name techblog-container -p 3000:3000 techblog-app
                   '''
             }
         }
