@@ -1,8 +1,5 @@
 pipeline {  
     agent any  
-     environment {
-        SSH_KEY_ID = 'vps-ssh-key' // The ID you set in the credentials manager
-    }
     stages {  
         stage('Clone Repository') {
             steps {
@@ -13,7 +10,7 @@ pipeline {
             steps {
                   sh '''
                   docker build -t techblog-app .
-                  docker run -p 3000:3000 techblog-app
+                  docker run -d -p 3000:3000 techblog-app
                   '''
             }
         }
