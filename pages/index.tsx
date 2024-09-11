@@ -22,6 +22,8 @@ const Posts: NextPage<PostProps> = ({ guides }) => {
           const guideScriptData = guideIntroPost.codeinjection_head.match(/<script type="application\/json">([\s\S]*?)<\/script>/);
           const guideData = JSON.parse(guideScriptData[1].trim())
 
+          console.log("feature image",guideIntroPost.feature_image)
+
           return (
             <div className="mt-5 block bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" key={idx}>
               <div className="grid grid-cols-3 gap-3">
@@ -84,6 +86,7 @@ const Posts: NextPage<PostProps> = ({ guides }) => {
 
 export async function getStaticProps() {
   const guides = await getPostsByTagForGuide();
+  console.log(guides);
 
   return {
     props: {

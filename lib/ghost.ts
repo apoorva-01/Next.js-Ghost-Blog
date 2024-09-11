@@ -1,7 +1,7 @@
 import GhostContentAPI from '@tryghost/content-api';
 const api = new GhostContentAPI({
-  url: process.env.GHOST_API_URL as string,
-  key: process.env.GHOST_API_KEY as string,
+  url: "https://ghost.apoorvaverma.in" as string,
+  key: "402ae69d00660c74a363d61d51" as string,
   version: 'v3.0'
 });
 
