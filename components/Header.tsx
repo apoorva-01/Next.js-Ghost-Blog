@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import siteConfig from "@/data/siteConfig";
 import Link from "next/link";
 import { cx } from "@/lib/utils";
-
+import Image from 'next/image'
 export const Header: React.FC = () => {
   const { pathname } = useRouter();
   return (
@@ -10,7 +10,13 @@ export const Header: React.FC = () => {
       <Link href="/" className="font-bold">
         {siteConfig.avatar ? (
           <span className="flex">
-            <video src="/logo.mp4" autoPlay muted loop className="rounded-md" width={80} height={80}></video>
+            {/* <video src="/logo.mp4" autoPlay muted loop className="rounded-md" width={80} height={80}></video> */}
+            <Image
+              src="/logo.png"
+              width={80}
+              height={80}
+              alt=""
+            />
           </span>
         ) : (
           siteConfig.siteName
