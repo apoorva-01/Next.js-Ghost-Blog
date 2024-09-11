@@ -83,6 +83,7 @@ const Posts: NextPage<PostProps> = ({ guides }) => {
   );
 };
 
+
 export async function getStaticProps() {
   const guides = await getPostsByTagForGuide();
 
