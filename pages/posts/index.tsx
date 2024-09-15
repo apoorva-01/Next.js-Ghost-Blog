@@ -1,14 +1,14 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 
-export default function RedirectToFirstPage() {
-  return null; // This page will never be rendered because of the redirect
-}
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     redirect: {
       destination: '/posts/page/1',
-      permanent: true, // Make it permanent if you don't want this route to exist at all
+      permanent: false, // Set to true for permanent redirect
     },
   };
 };
+
+export default function RedirectToFirstPage() {
+  return null; // This component won't render anything because the page is redirected
+}
