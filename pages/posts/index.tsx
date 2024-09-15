@@ -12,8 +12,7 @@ export default function Posts({ posts }: PostProps)  {
     <>
       <Page
         title="Posts"
-        description=""
-      >
+        description="">
         <PostList posts={posts} />
       </Page>
     </>
@@ -23,7 +22,6 @@ export default function Posts({ posts }: PostProps)  {
 
 export async function getStaticProps() {
   const posts = await getPosts();
-  // console.log(posts)
   return {
     props: { posts }
   };

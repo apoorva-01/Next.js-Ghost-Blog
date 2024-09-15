@@ -27,6 +27,8 @@ const Posts: NextPage<PostProps> = ({ guides }) => {
             <div className="mt-5 block bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" key={idx}>
               <div className="grid grid-cols-3 gap-3">
                 {/* Image */}
+                {guideIntroPost.feature_image?
+                <>
                 <a href={`/guides/${guideData.guide_name}`} className="flex-shrink-0">
                   <Image
                     className="rounded-lg"
@@ -36,6 +38,7 @@ const Posts: NextPage<PostProps> = ({ guides }) => {
                     height={300}
                   />
                 </a>
+                </>:null}
 
                 {/* Intro */}
                 <div className="p-3">

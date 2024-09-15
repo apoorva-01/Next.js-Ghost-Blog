@@ -165,3 +165,23 @@ pre[class*="language-"] {
   font-style: italic;
 }
 
+.pagination {
+  display: inline-block;
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+.pagination a.active {
+  background-color: #0399e3;
+  color: white;
+  border: 1px solid #0399e3
+}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
