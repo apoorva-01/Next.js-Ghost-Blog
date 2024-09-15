@@ -55,12 +55,35 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const page = parseInt(context.params?.page as string, 10);
   const allPosts = await getPosts();
-  
-  const start = (page - 1) * POSTS_PER_PAGE;
-  const end = start + POSTS_PER_PAGE;
-  const posts = allPosts.slice(start, end);
 
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+  // Define the script regex pattern
+  const scriptRegex = /<script\s+type=["']application\/json["']>(.*?)<\/script>/s;
+
+  // Filter posts based on the priority in metadata
+  const filteredPosts = allPosts.filter(post => {
+    if (post.codeinjection_head) {
+      const metadataScript = post.codeinjection_head.match(scriptRegex);
+      if (metadataScript) {
+        try {
+          const metadata = JSON.parse(metadataScript[1].trim());
+          // Only include posts where priority is not 0
+          return metadata.priority !== 0;
+        } catch (error) {
+          console.error('Error parsing JSON metadata:', error);
+        }
+      }
+    }
+    // Exclude posts that don't match the condition
+    return true;
+  });
+
+    // Paginate the filtered posts
+    const start = (page - 1) * POSTS_PER_PAGE;
+    const end = start + POSTS_PER_PAGE;
+    const posts = filteredPosts.slice(start, end);
+  
+    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
   return {
     props: {
