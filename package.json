@@ -2,9 +2,10 @@
   "name": "nextjs-mdx-blog-theme",
   "private": true,
   "scripts": {
+    "generate-sitemap": "node scripts/generate-sitemap.js",
     "dev": "next dev",
     "dev:watch": "next-remote-watch ./posts",
-    "build": "next build && node scripts/generate-sitemap.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
