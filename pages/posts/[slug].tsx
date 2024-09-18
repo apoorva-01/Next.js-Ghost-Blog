@@ -7,7 +7,6 @@ import { cx } from "@/lib/utils";
 import Breadcrumb from '../../components/Breadcrumb';
 import { getPosts, getPostBySlug } from "@/lib/ghost";
 
-
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -19,14 +18,12 @@ interface PostProps {
 }
 
 const Post: NextPage<PostProps> = ({ post, previous, next }) => {
-  // console.log(post)
   return (
     <>
-     <Breadcrumb />
-     <br />
-     <br />
-      <Page title={post.title} description={post.excerpt} date={post.updated_at} >
-     
+      <Breadcrumb />
+      <br />
+      <br />
+      <Page title={post.title} description={post.excerpt} date={post.updated_at} slug={post.slug} >
 
         <Prose>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />

@@ -9,6 +9,7 @@ interface PageProps {
   date?: string;
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
+  slug?: string;
   thumbnail?: string;
   children?: React.ReactNode;
 }
@@ -17,6 +18,7 @@ export const Page: React.FC<PageProps> = ({
   date,
   title,
   description,
+  slug,
   thumbnail,
   children,
 }) => {
@@ -25,20 +27,41 @@ export const Page: React.FC<PageProps> = ({
     ? onlyText(description)
     : siteConfig.siteDescription;
   const metaThumbnail = thumbnail ? thumbnail : siteConfig.siteThumbnail;
-  // fixed https://github.com/vercel/next.js/discussions/38256
   const customTitle = `${metaTitle} - ${siteConfig.siteName}`;
   return (
     <>
       <Head>
         <title>{customTitle}</title>
-        <meta name="og:url" content={siteConfig.siteUrl} />
-        <meta property="og:title" content={metaTitle} />
-        <meta name="description" content={metaDescription} />
-        <meta name="og:description" content={metaDescription} />
+        <meta charSet="utf-8" />
+        <meta property="og:title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="og:description" content={description} />
+        <meta property="article:published_time" content={date} />
+        <meta property="article:modified_time" content={date} />
+        <meta property="og:url" content={`${siteConfig.siteUrl}posts/${slug}`} />
         <meta
           property="og:image"
           content={`${siteConfig.siteUrl}${metaThumbnail}`}
         />
+        <meta name="apple-mobile-web-app-title" content={siteConfig.siteName} />
+        <meta name="application-name" content={siteConfig.siteName} />
+        <meta name="msapplication-TileColor" content="#0698E5" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="twitter:site" content={siteConfig.twitterUsername} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={siteConfig.siteThumbnail} />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="720" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={siteConfig.siteName} />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="article:publisher" content={siteConfig.social?.linkedin} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={siteConfig.siteThumbnail} />
+        <meta name="twitter:creator" content={siteConfig.twitterUsername} />
       </Head>
       <header
         className={cx(

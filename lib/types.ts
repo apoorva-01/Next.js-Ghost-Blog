@@ -5,6 +5,7 @@ export type SiteConfig = {
   siteDescription: string;
   siteThumbnail: string;
   nav: Array<{ label: string; href: string }>;
+  twitterUsername: string;
   social?: {
     github?: string;
     twitter?: string;
