@@ -2,6 +2,7 @@ import { Page } from "@/components/Page";
 import { PostList } from "@/components/PostList";
 import { getPosts } from '../../../lib/ghost'; // Adjust path based on your structure
 import type { GhostPost } from "@/lib/types";
+
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 type PostProps = {

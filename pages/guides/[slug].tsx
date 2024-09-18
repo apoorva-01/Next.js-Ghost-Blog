@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Page } from "@/components/Page";
 import { Prose } from "@/components/Prose";
 import { getGuideIntroPost, getPosts } from "@/lib/ghost";
-
+import Breadcrumb from '../../components/Breadcrumb';
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -23,6 +23,8 @@ const Post: NextPage<PostProps> = ({ guide }) => {
         {/* <Prose>
           <div dangerouslySetInnerHTML={{ __html: guideIntroPost.html }} />
         </Prose> */}
+         <Breadcrumb />
+         <br /><br />
 
         <div className="w-full bg-gray-100 px-4 py-3 text-left text-gray-800 break-words max-w-md rounded">
           <div className="mx-auto text-xl font-semibold"><strong>Table of content</strong></div>

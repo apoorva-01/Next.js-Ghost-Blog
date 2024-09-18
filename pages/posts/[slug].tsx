@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Page } from "@/components/Page";
 import { Prose } from "@/components/Prose";
 import { cx } from "@/lib/utils";
+import Breadcrumb from '../../components/Breadcrumb';
 import { getPosts, getPostBySlug } from "@/lib/ghost";
 
 
@@ -21,7 +22,12 @@ const Post: NextPage<PostProps> = ({ post, previous, next }) => {
   // console.log(post)
   return (
     <>
+     <Breadcrumb />
+     <br />
+     <br />
       <Page title={post.title} description={post.excerpt} date={post.updated_at} >
+     
+
         <Prose>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </Prose>

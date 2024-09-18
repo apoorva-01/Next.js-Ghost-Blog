@@ -165,6 +165,7 @@ pre[class*="language-"] {
   font-style: italic;
 }
 
+/* Pagination */
 .pagination {
   display: inline-block;
 }
@@ -178,10 +179,34 @@ pre[class*="language-"] {
   margin: 0 4px;
 }
 .pagination a.active {
-  background-color: #0399e3;
+  background-color: #0698E5;
   color: white;
-  border: 1px solid #0399e3
+  border: 1px solid #0698E5
 }
 .pagination a:hover:not(.active) {
   background-color: #ddd;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumbItem + .breadcrumbItem::before {
+  content: '>';
+  margin: 0 8px;
+}
+
+.breadcrumbItem a {
+  text-decoration: none;
+  color: #0698E5;
+}
+
+.breadcrumbItem a:hover {
+  text-decoration: underline;
+}
+.active a{
+  text-decoration: underline;
 }
