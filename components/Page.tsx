@@ -33,9 +33,9 @@ export const Page: React.FC<PageProps> = ({
       <Head>
         <title>{customTitle}</title>
         <meta charSet="utf-8" />
-        <meta property="og:title" content={title} />
-        <meta name="description" content={description} />
-        <meta name="og:description" content={description} />
+        <meta property="og:title" content={metaTitle} />
+        <meta name="description" content={metaDescription} />
+        <meta name="og:description" content={metaDescription} />
         <meta property="article:published_time" content={date} />
         <meta property="article:modified_time" content={date} />
         <meta property="og:url" content={`${siteConfig.siteUrl}posts/${slug}`} />
