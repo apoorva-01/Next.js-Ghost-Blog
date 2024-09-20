@@ -10,7 +10,7 @@ interface PostListProps {
 }
 
 export const PostList: React.FC<PostListProps> = ({ posts }) => {
-  console.log(posts)
+  // console.log(posts)
   return (
     <ul
       className={cx(
@@ -61,7 +61,7 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
               )}
               {siteConfig?.authorName && (
                 <span className="text-xs text-gray-700 dark:text-gray-300">
-                 Written by :<br/>
+                 Written by<br/>
                   {siteConfig?.authorName}
                 </span>
               )}

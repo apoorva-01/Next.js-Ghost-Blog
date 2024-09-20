@@ -6,6 +6,7 @@ import { Prose } from "@/components/Prose";
 import { cx } from "@/lib/utils";
 import Breadcrumb from '../../components/Breadcrumb';
 import { getPosts, getPostBySlug } from "@/lib/ghost";
+import siteConfig from "@/data/siteConfig";
 
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
@@ -23,6 +24,22 @@ const Post: NextPage<PostProps> = ({ post, previous, next }) => {
       <Breadcrumb />
       <br />
       <br />
+       {/* Author Info Below the Tags */}
+       <div className="flex items-center mb-2">
+              {siteConfig?.authorName && (
+                <img
+                  src={siteConfig?.authorImage}
+                  alt={siteConfig?.authorName}
+                  className="w-7 h-7 rounded-full mr-3"
+                />
+              )}
+              {siteConfig?.authorName && (
+                <span className="text-xs text-gray-700 dark:text-gray-300">
+                 Written by<br/>
+                  {siteConfig?.authorName}
+                </span>
+              )}
+            </div>
       <Page title={post.title} description={post.excerpt} date={post.updated_at} slug={post.slug} >
 
         <Prose>
