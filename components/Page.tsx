@@ -70,6 +70,22 @@ export const Page: React.FC<PageProps> = ({
           "dark:border-gray-700"
         )}
       >
+         {/* Author Info Below the Tags */}
+         <div className="flex items-center mb-2">
+              {siteConfig?.authorName && (
+                <img
+                  src={siteConfig?.authorImage}
+                  alt={siteConfig?.authorName}
+                  className="w-7 h-7 rounded-full mr-3"
+                />
+              )}
+              {siteConfig?.authorName && (
+                <span className="text-xs text-gray-700 dark:text-gray-300">
+                 Written by<br/>
+                  {siteConfig?.authorName}
+                </span>
+              )}
+            </div>
         {date ? (
           <time
             className={cx("block mb-2", "text-gray-500", "dark:text-gray-400")}
@@ -77,7 +93,9 @@ export const Page: React.FC<PageProps> = ({
             {formatDate(date)}
           </time>
         ) : null}
+        
         <h1 className="font-bold text-3xl">{title}</h1>
+        
         {description ? (
           <div className="mt-4">
             <Prose>
@@ -89,6 +107,7 @@ export const Page: React.FC<PageProps> = ({
             </Prose>
           </div>
         ) : null}
+        
       </header>
       {children}
     </>

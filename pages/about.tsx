@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import { Page } from "@/components/Page";
 import { Prose } from "@/components/Prose";
-
+import Image from "next/image";
+import siteConfig from "@/data/siteConfig";
 const About: NextPage = () => {
   return (
     <>
@@ -9,13 +10,29 @@ const About: NextPage = () => {
         title="Apoorva Verma"
         description="MySQL and Heatwave Release Engineer @Oracle">
         <Prose>
-          <p>
-            Hey there! I’m excited to share my DevOps journey with you 🚀 <br /><br />
-            I’ve been diving into the world of DevOps, learning the ins and outs of making development and operations work better together. <br />
 
-            <b>Along the way, I’ve picked up some cool tips, tricks, and a few lessons learned the hard way—So why not share them? 😉</b>
+
+          <p style={{ display: 'flex', alignItems: 'center' }}>
+            <span>
+              <p>
+                Hey there! I’m excited to share my DevOps journey with you 🚀 <br /><br />
+                I’ve been diving into the world of DevOps, learning the ins and outs of making development and operations work better together. <br />
+
+                <b>Along the way, I’ve picked up some cool tips, tricks, and a few lessons learned the hard way—So why not share them? 😉</b>
+              </p>
+            </span>
+            <Image
+              src={siteConfig?.authorImage}
+              alt={siteConfig?.authorName}
+              width={300}
+              height={300}
+              style={{
+                borderRadius: '50%', // Circular shape
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Box shadow
+                marginLeft: '15px' // Spacing between text and image
+              }}
+            />
           </p>
-
           <p>
             As a professional immersed in DevOps, I’ve had the opportunity to work with cutting-edge technologies like Oracle Cloud Infrastructure (OCI), Jenkins, Docker, and more. <br /><br />
             My blog is a reflection of the knowledge I’ve gained through hands-on projects, certifications, and real-world challenges.
@@ -34,7 +51,7 @@ const About: NextPage = () => {
 
 
 
-       
+
 
 
         </Prose>

@@ -1,6 +1,5 @@
 import { formatDate } from "@/lib/formatDate";
-
-
+import siteConfig from "@/data/siteConfig";
 import Link from "next/link";
 import { Prose } from "@/components/Prose";
 import { cx, slugify } from "@/lib/utils";
@@ -11,6 +10,7 @@ interface PostListProps {
 }
 
 export const PostList: React.FC<PostListProps> = ({ posts }) => {
+  console.log(posts)
   return (
     <ul
       className={cx(
@@ -22,15 +22,15 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
       {posts.map((post, index) => (
         <li className="py-8" key={index}>
           <article>
-          <time
-                className={cx(
-                  "block mb-2",
-                  "text-gray-500",
-                  "dark:text-gray-400"
-                )}
-              >
-                {formatDate(post.updated_at)}
-              </time>
+            <time
+              className={cx(
+                "block mb-2",
+                "text-gray-500",
+                "dark:text-gray-400"
+              )}
+            >
+              {formatDate(post.updated_at)}
+            </time>
             <h2 className="font-bold text-xl">
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </h2>
@@ -50,6 +50,22 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
                 ))}
               </ul>
             ) : null}
+            {/* Author Info Below the Tags */}
+            <div className="flex items-center mt-4">
+              {siteConfig?.authorName && (
+                <img
+                  src={siteConfig?.authorImage}
+                  alt={siteConfig?.authorName}
+                  className="w-7 h-7 rounded-full mr-3"
+                />
+              )}
+              {siteConfig?.authorName && (
+                <span className="text-xs text-gray-700 dark:text-gray-300">
+                 Written by :<br/>
+                  {siteConfig?.authorName}
+                </span>
+              )}
+            </div>
           </article>
         </li>
       ))}

@@ -4,6 +4,8 @@ export type SiteConfig = {
   siteName: string;
   siteDescription: string;
   siteThumbnail: string;
+  authorName:string;
+  authorImage:string;
   nav: Array<{ label: string; href: string }>;
   twitterUsername: string;
   social?: {
