@@ -17,7 +17,7 @@ const TermsOfService: NextPage = () => {
 
           <h2>Use of Our Website</h2>
           <p>
-            You agree to use our website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website.
+            You agree to use our website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else&apos;s use and enjoyment of the website.
           </p>
 
           <h2>Intellectual Property</h2>

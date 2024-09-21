@@ -7,7 +7,7 @@ import { cx } from "@/lib/utils";
 import Breadcrumb from '../../components/Breadcrumb';
 import { getPosts, getPostBySlug } from "@/lib/ghost";
 import siteConfig from "@/data/siteConfig";
-
+import Image from "next/image";
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -27,10 +27,12 @@ const Post: NextPage<PostProps> = ({ post, previous, next }) => {
        {/* Author Info Below the Tags */}
        <div className="flex items-center mb-2">
               {siteConfig?.authorName && (
-                <img
+                <Image
+                width={30}
+                height={30} 
                   src={siteConfig?.authorImage}
                   alt={siteConfig?.authorName}
-                  className="w-7 h-7 rounded-full mr-3"
+                  className="rounded-full mr-3"
                 />
               )}
               {siteConfig?.authorName && (

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Prose } from "@/components/Prose";
 import { cx, slugify } from "@/lib/utils";
 import { Tag } from "./Tag";
-
+import Image from "next/image";
 interface PostListProps {
   posts: Array<any>;
 }
@@ -53,11 +53,13 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
             {/* Author Info Below the Tags */}
             <div className="flex items-center mt-4">
               {siteConfig?.authorName && (
-                <img
-                  src={siteConfig?.authorImage}
-                  alt={siteConfig?.authorName}
-                  className="w-7 h-7 rounded-full mr-3"
-                />
+                 <Image
+                 width={30}
+                 height={30} 
+                   src={siteConfig?.authorImage}
+                   alt={siteConfig?.authorName}
+                   className="rounded-full mr-3"
+                 />
               )}
               {siteConfig?.authorName && (
                 <span className="text-xs text-gray-700 dark:text-gray-300">

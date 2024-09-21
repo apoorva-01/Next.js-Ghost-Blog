@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { Page } from "@/components/Page";
 import { Prose } from "@/components/Prose";
-import Image from "next/image";
 import siteConfig from "@/data/siteConfig";
 
 const PrivacyPolicy: NextPage = () => {
