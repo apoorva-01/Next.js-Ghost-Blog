@@ -3,6 +3,7 @@ const siteConfig: SiteConfig = {
   avatar: "/avatar.jpeg",
   siteUrl: "https://apoorvaverma.in/",
   siteName: "Apoorva Verma",
+  contactEmail:"info@apoorvaverma.in",
   siteDescription:"",
   siteThumbnail: "https://apoorvaverma.in/logo.png",
   authorName:"Apoorva Verma",
