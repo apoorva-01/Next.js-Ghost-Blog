@@ -216,13 +216,13 @@ pre[class*="language-"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   /* padding: 16px; */
 }
 .about-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 .about-image {
   border-radius: 50%;
