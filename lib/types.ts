@@ -7,6 +7,7 @@ export type SiteConfig = {
   authorName:string;
   authorImage:string;
   contactEmail:string;
+  privacyPage:string;
   nav: Array<{ label: string; href: string }>;
   twitterUsername: string;
   social?: {

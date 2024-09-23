@@ -39,6 +39,14 @@ export const Footer: React.FC = () => {
       <div className="mt-8 flex justify-center">
         <ThemeSelect />
       </div>
+      <div className="mt-4 flex justify-center">
+        <a
+          href={siteConfig.privacyPage} // Use the privacy page link from siteConfig
+          className="text-gray-600 hover:underline dark:text-gray-400"
+        >
+          Privacy Policy
+        </a>
+      </div>
     </footer>
   );
 };

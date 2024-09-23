@@ -8,6 +8,7 @@ const siteConfig: SiteConfig = {
   siteThumbnail: "https://apoorvaverma.in/logo.png",
   authorName:"Apoorva Verma",
   authorImage: "/avatar.jpeg",
+  privacyPage:"/privacy-policy", 
   nav: [
     { label: "Guides", href: "/" },
     { label: "Posts", href: "/posts" },
