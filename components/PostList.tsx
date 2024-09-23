@@ -22,7 +22,7 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
       {posts.map((post, index) => (
         <li className="py-8" key={index}>
           <article>
-            <time
+            {/* <time
               className={cx(
                 "block mb-2",
                 "text-gray-500",
@@ -30,7 +30,7 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
               )}
             >
               {formatDate(post.updated_at)}
-            </time>
+            </time> */}
             <h2 className="font-bold text-xl">
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </h2>
@@ -53,18 +53,24 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
             {/* Author Info Below the Tags */}
             <div className="flex items-center mt-4">
               {siteConfig?.authorName && (
-                 <Image
-                 width={30}
-                 height={30} 
-                   src={siteConfig?.authorImage}
-                   alt={siteConfig?.authorName}
-                   className="rounded-full mr-3"
-                 />
+                <Image
+                  width={30}
+                  height={30}
+                  src={siteConfig?.authorImage}
+                  alt={siteConfig?.authorName}
+                  className="rounded-full mr-3"
+                />
               )}
               {siteConfig?.authorName && (
                 <span className="text-xs text-gray-700 dark:text-gray-300">
-                 Written by<br/>
-                  {siteConfig?.authorName}
+                  {siteConfig?.authorName}<br />
+
+
+                  <time
+                    className={cx("block mb-2", "text-gray-500", "dark:text-gray-400")}
+                  >
+                    {formatDate(post.updated_at)}
+                  </time>
                 </span>
               )}
             </div>

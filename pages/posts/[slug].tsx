@@ -8,6 +8,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import { getPosts, getPostBySlug } from "@/lib/ghost";
 import siteConfig from "@/data/siteConfig";
 import Image from "next/image";
+import { formatDate } from "@/lib/formatDate";
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -24,24 +25,32 @@ const Post: NextPage<PostProps> = ({ post, previous, next }) => {
       <Breadcrumb />
       <br />
       <br />
-       {/* Author Info Below the Tags */}
-       <div className="flex items-center mb-2">
-              {siteConfig?.authorName && (
-                <Image
-                width={30}
-                height={30} 
-                  src={siteConfig?.authorImage}
-                  alt={siteConfig?.authorName}
-                  className="rounded-full mr-3"
-                />
-              )}
-              {siteConfig?.authorName && (
-                <span className="text-xs text-gray-700 dark:text-gray-300">
-                 Written by<br/>
-                  {siteConfig?.authorName}
-                </span>
-              )}
-            </div>
+      {/* Author Info Below the Tags */}
+      <div className="flex items-center mb-2">
+        {siteConfig?.authorName && (
+          <Image
+            width={30}
+            height={30}
+            src={siteConfig?.authorImage}
+            alt={siteConfig?.authorName}
+            className="rounded-full mr-3"
+          />
+        )}
+        {siteConfig?.authorName && (
+          <span className="text-xs text-gray-700 dark:text-gray-300">
+            {siteConfig?.authorName} <br />
+            {post.updated_at ? (
+              <time
+                className={cx("block mb-2", "text-gray-500", "dark:text-gray-400")}
+              >
+                {formatDate(post.updated_at)}
+              </time>
+            ) : null}
+          </span>
+        )}
+      </div>
+
+
       <Page title={post.title} description={post.excerpt} date={post.updated_at} slug={post.slug} >
 
         <Prose>
