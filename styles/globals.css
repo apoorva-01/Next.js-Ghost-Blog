@@ -110,7 +110,7 @@ pre[class*="language-"] {
 }
 
 .token.boolean {
-  color: rgb(255, 88, 116);
+  /* color: rgb(255, 88, 116); */
 }
 
 .token.number {
