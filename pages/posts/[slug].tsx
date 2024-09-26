@@ -20,7 +20,7 @@ interface PostProps {
 }
 
 const Post: NextPage<PostProps> = ({ post, previous, next }) => {
-  // console.log(post);
+  console.log(post.tags);
   return (
     <>
       <Breadcrumb />

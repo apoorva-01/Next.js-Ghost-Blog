@@ -43,7 +43,7 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
             ) : null}
             {post.tags?.length ? (
               <ul className="mt-4 flex flex-wrap space-x-2">
-                {post.tags.map((tag: any, index: number) => (
+                {post.tags.filter((tag: any) => tag.visibility === 'public').map((tag: any, index: number) => (
                   <li key={index}>
                     <Tag href={`/posts/tagged/${slugify(tag.name)}`}>{tag.name}</Tag>
                   </li>
@@ -64,11 +64,7 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
               {siteConfig?.authorName && (
                 <span className="text-xs text-gray-700 dark:text-gray-300">
                   {siteConfig?.authorName}<br />
-
-
-                  <time
-                    className={cx("block mb-2", "text-gray-500", "dark:text-gray-400")}
-                  >
+                  <time className={cx("block mb-2", "text-gray-500", "dark:text-gray-400")}>
                     {formatDate(post.updated_at)}
                   </time>
                 </span>
