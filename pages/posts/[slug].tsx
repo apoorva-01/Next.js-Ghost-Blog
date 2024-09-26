@@ -9,8 +9,6 @@ import { getPosts, getPostBySlug } from "@/lib/ghost";
 import siteConfig from "@/data/siteConfig";
 import Image from "next/image";
 import { formatDate } from "@/lib/formatDate";
-import styled from "styled-components";
-// import styles from '../../styles/Post.module.css';
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -22,11 +20,7 @@ interface PostProps {
 }
 
 const Post: NextPage<PostProps> = ({ post, previous, next }) => {
-  console.log(post);
-  const Container = styled.div`
-    // Below is the styling that I want to apply only for posts not global styling
-  `;
-
+  // console.log(post);
   return (
     <>
       <Breadcrumb />

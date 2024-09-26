@@ -316,12 +316,18 @@ h6 {
   border: 3px solid #ddd;
 }
 
+.post-content  a {
+  text-decoration: underline;
+}
 .post-content hr {
   border: 0;
   border-top: 2px solid #ccc;
   margin: 20px 0;
 }
-
+/* 
+.post-content strong {
+  text-decoration: underline;
+} */
 .post-content blockquote {
   margin: 20px 0;
   padding: 10px 20px;
