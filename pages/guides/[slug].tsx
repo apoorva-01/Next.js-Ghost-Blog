@@ -27,7 +27,7 @@ const Post: NextPage<PostProps> = ({ guide }) => {
          <br /><br />
 
         <div className="w-full bg-gray-100 px-4 py-3 text-left text-gray-800 break-words max-w-md rounded">
-          <div className="mx-auto text-xl font-semibold"><strong>Table of content</strong></div>
+          <div className="mx-auto text-3xl font-semibold"><strong>Table of content</strong></div>
           <ul className="mt-2 list-disc px-2 pl-6">
 
             {posts.map((post: any, index: any) => (
@@ -41,7 +41,7 @@ const Post: NextPage<PostProps> = ({ guide }) => {
                 >
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                 </svg>
-                <h2 className="text-sm">
+                <h2 className="text-md">
                   <Link className="block hover:bg-gray-200 px-2 py-1 rounded" href={`/posts/${post.slug}`}>
                     {post.title}
                   </Link>

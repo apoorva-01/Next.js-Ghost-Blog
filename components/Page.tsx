@@ -80,13 +80,13 @@ export const Page: React.FC<PageProps> = ({
           </time>
         ) : null} */}
 
-        <h1 className="font-bold text-3xl">{title}</h1>
+        <h1 className="font-bold text-4xl">{title}</h1>
 
         {description ? (
           <div className="mt-4">
             <Prose>
               {typeof description === "string" ? (
-                <p>{description}</p>
+                <p className="text-xl" >{description}</p>
               ) : (
                 description
               )}

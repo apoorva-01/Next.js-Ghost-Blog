@@ -31,7 +31,7 @@ export const PostList: React.FC<PostListProps> = ({ posts }) => {
             >
               {formatDate(post.updated_at)}
             </time> */}
-            <h2 className="font-bold text-xl">
+            <h2 className="font-bold text-2xl">
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </h2>
             {post.excerpt ? (

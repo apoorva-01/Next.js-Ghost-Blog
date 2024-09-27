@@ -16,7 +16,7 @@ interface PostsProps {
 const Posts: NextPage<PostsProps> = ({ tag, posts }) => {
   return (
     <>
-      <Page title={`Posts tagged: "${tag}"`}>
+      <Page title={`Tag: ${tag.toUpperCase()}`}>
         <PostList posts={posts} />
       </Page>
     </>

@@ -25,11 +25,17 @@ class MyDocument extends Document {
         />
         {/* End Google Tag Manager */}
 
+        {/* Linkedin Badge */}
+        {/* <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+        <script async src="https://platform.twitter.com/widgets.js"></script> */}
+
         </Head>
         <body
           className={cx(
-            "bg-gray-50 text-gray-800",
-            "dark:bg-gray-900 dark:text-gray-50"
+            // "bg-gray-50 text-gray-800",
+            // "dark:bg-gray-900 dark:text-gray-50"
+            "bg-customLightBg text-customLightText",
+            "dark:bg-customDarkBg dark:text-customDarkText"
           )}
         >
           <Main />

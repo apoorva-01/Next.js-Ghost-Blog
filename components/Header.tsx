@@ -33,8 +33,8 @@ export const Header: React.FC = () => {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cx(
-                    "text-gray-500 hover:text-gray-900",
-                    "dark:text-gray-400 dark:hover:text-gray-300"
+                    "text-xl text-gray-500 hover:text-gray-900",
+                    "text-xl dark:text-gray-400 dark:hover:text-gray-300"
                   )}
                 >
                   {item.label}

@@ -8,14 +8,6 @@ body,
   height: 100%;
 }
 
-/**
- * Code block styles
- * MIT License
- * Copyright (c) 2018 Sarah Drasner
- * Sarah Drasner's[@sdras] Night Owl
- * Ported by Sara vieria [@SaraVieira]
- * Added by Souvik Mandal [@SimpleIndian]
- */
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -251,18 +243,18 @@ body {
   padding: 20px;
 }
 
-.post-content  h2,
+.post-content  
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
   line-height: 1.4;
-  color: rgb(0, 0, 0);
-  margin-bottom: 10px;
 }
 
 .post-content  h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
 }
 
@@ -272,25 +264,25 @@ h6 {
 }
 
 .post-content  h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .post-content  h4 {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .post-content  h5 {
-  font-size: 1.125rem;
+  font-size: 1.4rem;
 }
 
 .post-content  h6 {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .post-content  p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
   font-weight: 400;
 }
@@ -299,6 +291,7 @@ h6 {
   list-style-type: disc;
   margin-left: 20px;
   margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .post-content li {

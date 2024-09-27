@@ -17,7 +17,8 @@ export default function Posts({ posts, currentPage, totalPages }: PostProps) {
   return (
     <>
       <Page
-        title={`Posts - Page ${currentPage}`}
+        // title={`Posts - Page ${currentPage}`}
+        title=""
         description="">
         <PostList posts={posts} />
         <div style={{ textAlign: 'center', marginTop: '20px' }}>

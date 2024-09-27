@@ -78,7 +78,7 @@ const Post: NextPage<PostProps> = ({ post, previous, next }) => {
               <div>
                 <p
                   className={cx(
-                    "mb-2 uppercase tracking-wider text-sm",
+                    "mb-2 uppercase tracking-wider text-md",
                     "text-gray-500",
                     "dark:text-gray-400"
                   )}
@@ -94,7 +94,7 @@ const Post: NextPage<PostProps> = ({ post, previous, next }) => {
               <div className="col-start-2 text-right">
                 <p
                   className={cx(
-                    "mb-2 uppercase tracking-wider text-sm",
+                    "mb-2 uppercase tracking-wider text-md",
                     "text-gray-500",
                     "dark:text-gray-400"
                   )}
