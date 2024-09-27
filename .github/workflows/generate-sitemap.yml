@@ -1,0 +1,31 @@
+name: Generate Sitemap and Redeploy
+
+on:
+  schedule:
+    - cron: '30 18 * * *' # Runs every night at 00:00 IST (18:30 UTC)
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Ensure it matches your Node.js version
+
+      - name: Install Dependencies
+        run: npm ci  # Clean install based on package-lock.json
+
+      - name: Run Generate Sitemap Script
+        run: npm run generate-sitemap
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add .
+          git commit -m "Update sitemap [skip ci]" || echo "No changes to commit"
+          git push origin main  # Change `main` to your default branch if different
